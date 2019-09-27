@@ -1,4 +1,6 @@
-# calculate a face embedding for each face in the dataset using facenet
+''' Calculate embeddings for dataset(faces)
+    Save the embeddings for train, val dataset and labels in .npz format.'''
+
 from numpy import load
 from numpy import expand_dims
 from numpy import asarray
@@ -41,4 +43,4 @@ for face_pixels in testX:
 newTestX = asarray(newTestX)
 print(newTestX.shape)
 # save arrays to one file in compressed format
-savez_compressed('5-celebrity-faces-embeddings.npz', newTrainX, trainy, newTestX, testy)
+savez_compressed('faces_embeddings.npz', newTrainX, trainy, newTestX, testy)

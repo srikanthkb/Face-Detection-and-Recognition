@@ -1,4 +1,3 @@
-from keras.models import load_model
 from mtcnn.mtcnn import MTCNN
 from PIL import Image
 import matplotlib.pyplot as plt
@@ -23,7 +22,7 @@ def extract_face(file,required_size=(160,160)):
     face_array = np.asarray(image)
     return face_array
 
-def load_faces(directory):
+def load_images(directory):
     faces = list()
     for filename in os.listdir(directory):
         path = directory + filename
@@ -38,14 +37,16 @@ def load_dataset(directory):
         if not os.path.isdir(path):
             continue
         print('Working on directory: ',subdir)
-        faces = load_faces(path)
+        faces = load_images(path)
         labels = [subdir for _ in range(len(faces))]
         X.extend(faces)
         y.extend(labels)
     return np.asarray(X), np.asarray(y)
 
-
+# load images from directories
 train_dataset, train_labels = load_dataset('data\\train\\')
 val_dataset, val_labels = load_dataset('data\\val\\')
+
+# save extracted faces in form of numpy zip
 np.savez_compressed('data.npz',train_dataset,train_labels,val_dataset,val_labels)
 
