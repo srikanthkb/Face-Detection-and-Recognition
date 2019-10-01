@@ -32,14 +32,14 @@ trainX = in_encoder.transform(trainX)
 testX = in_encoder.transform(testX)
 print(testX.shape)
 # label encode targets
-out_encoder = LabelEncoder()
+out_encoder = 	LabelEncoder()
 out_encoder.fit(trainy)
 trainy = out_encoder.transform(trainy)
 testy = out_encoder.transform(testy)
 # fit model
 model = SVC(kernel='linear', probability=True)
 model.fit(trainX, trainy)
-#save the model
+# save the model
 pickle.dump(model, open('svm_model.sav','wb'))
 # predict
 yhat_train = model.predict(trainX)
