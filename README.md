@@ -11,13 +11,12 @@ How to run:
       </t></t></t> .<br />
       </t></t></t> .<br />
       </t></t></t> person*n/<br />
-    &ensp val/<br />
-      &ensp &ensp person1/<br />
-          &ensp &ensp &ensp  image1<br />
-          &ensp &ensp &ensp  (...)<br />
-        &ensp &ensp &ensp .<br />
-        &ensp &ensp &ensp .<br />
-      &ensp &ensp person*n/<br />
+    </t> val/<br />
+      </t></t> person1/<br />
+      </t></t></t> (...)<br />
+      </t></t></t> .<br />
+      </t></t></t>.<br />
+      </t></t></t> person*n/<br />
 
 2. Run the dataset_prep.py program using python3.
    This creates a dataset of all the faces detected in the images stored in data/ folder. This data of all faces is saved onto the data.npz   
