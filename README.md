@@ -1,23 +1,23 @@
 # Face Detection and Recognition
 Detection and recognition of a person in real time live video sequences.
 How to run:
-1. Create a dataset of the people involved in the "data/" folder. The hierarchy that should be followed is below:
-   data/
-    train/
-      person1/
-          image1
-          image2 
-          (...)
-        .
-        .
-      person*n/
-    val/
-      person1/
-            image1
-            (...)
-         .
-         .
-      person*n/
+1. Create a dataset of the people involved in the "data/" folder. The hierarchy that should be followed is below: <br />
+   data/ <br />
+    &ensp train/ 
+      &ensp &ensp person1/
+        &ensp &ensp &ensp  image1
+        &ensp &ensp &ensp  image2 
+        &ensp &ensp &ensp  (...)
+        &ensp &ensp &ensp .
+        &ensp &ensp &ensp .
+      &ensp &ensp person*n/
+    &ensp val/
+      &ensp &ensp person1/
+          &ensp &ensp &ensp  image1
+          &ensp &ensp &ensp  (...)
+        &ensp &ensp &ensp .
+        &ensp &ensp &ensp .
+      &ensp &ensp person*n/
 
 2. Run the dataset_prep.py program using python3.
    This creates a dataset of all the faces detected in the images stored in data/ folder. This data of all faces is saved onto the data.npz   
