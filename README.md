@@ -1,6 +1,20 @@
 # Face Detection and Recognition
-Detection and recognition of a person in real time live video sequences.
-How to run:
+Detection and recognition of a person in real time live video sequences using FaceNet-Keras and SVM classifier. Currently, working on optimizing the cpu usage.
+
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. <br/>
+
+### Prerequisites
+
+```
+OpenCV-Python libraries (CV2)
+Pytorch - Deep learning framework
+Numpy library
+```
+### Working Principle
+
+## Running the Code
+
 1. Create a dataset of the people involved in the "data/" folder. The hierarchy that should be followed is below: <br />
    data/ <br />
     </t>strain/ <br />
