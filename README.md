@@ -8,16 +8,20 @@ These instructions will get you a copy of the project up and running on your loc
 
 ```
 OpenCV-Python libraries (CV2)
-Pytorch - Deep learning framework
+Keras - Deep learning framework
 Numpy library
 ```
 ### Working Principle
+1. Create a custom dataset of users/people. <br />
+2. Extract face embeddings from the faces using pretrained keras facenet model in numpy-zip format. <br />
+3. Train an SVM classifier using these face embeddings in (.npz) format, save the model using pickle.
+4. Use this model to predict the face in a video sequence.  
 
 ## Running the Code
 
 1. Create a dataset of the people involved in the "data/" folder. The hierarchy that should be followed is below: <br />
    data/ <br />
-    </t>strain/ <br />
+    </t>train/ <br />
       </t> </t> person1/ <br />
       </t> </t> </t>  image1<br />
       </t></t></t>  image2 <br />
@@ -33,17 +37,25 @@ Numpy library
       </t></t></t> person*n/<br />
 
 2. Run the dataset_prep.py program using python3.
-   This creates a dataset of all the faces detected in the images stored in data/ folder. This data of all faces is saved onto the data.npz numpy zip file. The data is stored in a format, that allows us to extract the labels easily.
+   ```
+   python3 dataset_prep.py
+   ```
 
 3. Run the extract_embeddings.py using python3.
-   This extracts the embeddings for all the faces stored in data.npz using a pretrained facenet model in keras.
-   These embeddings are again saved onto face_embeddings.npz numpy zip file, with embeddings and labels correspondingly.
+   ```
+   python3 extract_embeddings.py
+   ```
 
 4. Run the svm_classifier.py.
-   SVM classisfier is trained on the word embeddings and the labels stored in face_embeddings.npz and the model weights are dumped using 
-   pickle
+   ```
+   python3 svm_classifier.py
+   ```
 
 5. Run webcam.py
-   This program uses live feed from webcam and detects and recognizes the faces(if any) in the frame, in a continous loop.
+   ```
+   python3 webcam.py
+   ```
    
+### Demonstration
+![Farmers Market Finder Demo](ScreenCapture_10-01-2020-00.42.46.gif)
    
